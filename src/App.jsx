@@ -23,8 +23,8 @@ function useRevealAnimations() {
 function Header({ darkMode, menuOpen, onThemeToggle, onMenuToggle, onCloseMenu }) {
   return <header className="site-header" id="top">
     <nav className="nav container" aria-label="Primary navigation">
-      <a className="brand" href="#top" aria-label="Priyanshu home">P<span>.</span></a>
-      <div className={`nav-links ${menuOpen ? 'open' : ''}`}>
+      <a className="brand" href="#top" aria-label="Priyanshu home"><span className="brand-mark">p.</span> Priyanshu</a>
+      <div id="nav-links" className={`nav-links ${menuOpen ? 'open' : ''}`}>
         {navItems.map(([label, href]) => <a href={href} key={href} onClick={onCloseMenu}>{label}</a>)}
       </div>
       <div className="nav-actions">
@@ -32,7 +32,7 @@ function Header({ darkMode, menuOpen, onThemeToggle, onMenuToggle, onCloseMenu }
           <svg className="sun-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4" /><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" /></svg>
           <svg className="moon-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z" /></svg>
         </button>
-        <button className="menu-toggle" type="button" aria-label="Open menu" aria-expanded={menuOpen} onClick={onMenuToggle}><span /><span /></button>
+        <button className="menu-toggle" type="button" aria-label={menuOpen ? 'Close menu' : 'Open menu'} aria-controls="nav-links" aria-expanded={menuOpen} onClick={onMenuToggle}><span /><span /></button>
       </div>
     </nav>
   </header>;
@@ -48,8 +48,8 @@ function Hero() {
     </div>
     <div className="hero-art reveal delay-1" aria-label="Animated system diagram">
       <div className="orb orb-one" /><div className="orb orb-two" />
-      <div className="system-card"><div className="card-top"><span>LIVE SYSTEM</span><i /></div><div className="system-flow"><div className="flow-node active"><b /><span>Secure</span></div><div className="flow-line" /><div className="flow-node"><b /><span>Route</span></div><div className="flow-line" /><div className="flow-node"><b /><span>Settle</span></div></div><div className="card-bottom"><span>resilience first</span><span>∞ scale</span></div></div>
-      <div className="floating-note note-one">High throughput<br /><strong>by design</strong></div><div className="floating-note note-two"><span className="pulse" /> Systems online</div>
+      <div className="system-card"><div className="card-top"><span>PAYMENT INFRASTRUCTURE</span><i /></div><div className="system-flow"><div className="flow-node active"><b /><span>Secure</span></div><div className="flow-line" /><div className="flow-node"><b /><span>Route</span></div><div className="flow-line" /><div className="flow-node"><b /><span>Settle</span></div></div><div className="card-bottom"><span>01 / DISTRIBUTED SYSTEMS</span><span>RESILIENCE FIRST</span></div></div>
+      <div className="floating-note note-one">ENGINEERING FOCUS<br /><strong>High throughput.<br />Thoughtful architecture.</strong></div><div className="floating-note note-two"><span className="pulse" /> Payments × Applied AI</div>
     </div>
     <a className="scroll-cue" href="#about">Scroll to discover <span>↓</span></a>
   </section>;
